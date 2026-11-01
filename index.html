@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Check List – Inspeção Ambiental</title>
+  <meta name="description" content="Checklist de inspeção ambiental em propriedades rurais">
+  <meta name="theme-color" content="#00473e">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="img/icon-192.png">
+  <link rel="apple-touch-icon" href="img/icon-180.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Check List">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app"></div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <div id="overlay" hidden><div class="spinner"></div><p id="overlay-msg">Processando…</p></div>
+
+  <script src="checklist.js"></script>
+  <script src="lib/jspdf.umd.min.js"></script>
+  <script src="lib/msal-browser.min.js"></script>
+  <script src="db.js"></script>
+  <script src="pdf.js"></script>
+  <script src="teams.js"></script>
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+    }
+  </script>
+</body>
+</html>
